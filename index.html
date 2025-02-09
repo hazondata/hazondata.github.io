@@ -225,26 +225,6 @@
       display: none;
     }
 
-    /* Force dark background on the iframe and its contents */
-    /* .iframe-container {
-      background: #000000 !important;
-    }
-    
-    .iframe-container iframe {
-      background: #000000 !important;
-    } */
-
-    /* These more specific selectors should override the deck.gl canvas background
-    .tab-pane .iframe-container iframe {
-      background-color: #000000 !important;
-    } */
-
-    /* Additional specific rules to ensure the canvas stays dark
-    .dashboard-container main .tab-content .tab-pane,
-    .dashboard-container main .tab-content .tab-pane {
-      background: #000000 !important;
-    } */
-
     /* Add scrolling to the nav menu */
     .nav-sidebar .nav {
       overflow-y: auto;
@@ -404,14 +384,6 @@
           iframe.addEventListener("load", () => {
             try {
               const doc = iframe.contentDocument || iframe.contentWindow.document;
-              const style = document.createElement("style");
-              style.textContent = `
-                #deck-container canvas {
-                  z-index: 1;
-                  background: #000000 !important;
-                }
-              `;
-              doc.head.appendChild(style);
             } catch (e) {
               console.error("Error injecting dark background style:", e);
             }
