@@ -8,6 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- Add marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Add MathJax for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
   <style>
     /* Ensure full viewport height with no scrolling */
     html, body {
@@ -438,6 +453,10 @@
                 const response = await fetch(viz.file);
                 const text = await response.text();
                 markdownContainer.innerHTML = marked.parse(text);
+                // Trigger MathJax to process the new content
+                if (window.MathJax) {
+                  MathJax.typesetPromise([markdownContainer]);
+                }
                 spinner.style.display = 'none';
               } catch (error) {
                 console.error('Error loading markdown:', error);
