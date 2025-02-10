@@ -70,8 +70,8 @@ The Skills Taxonomy visualization maps technology skills as points in a two-dime
 
 - **Growth Rate:**\
    A normalized measure (ranging from -1.0 to 1.0) calculated using a 90-day sliding window: \
-   $\text{Growth Rate} = \frac{C{\text{end}} - C{\text{start}}}{C{\text{start}}}$\
-    where $C{\text{start}}$ and $C_{\text{end}}$ denote the counts at the beginning and end of the window, respectively.
+   $\text{Growth Rate} = \frac{C_{\text{end}} - C_{\text{start}}}{C_{\text{start}}}$\
+    where $C_{\text{start}}$ and $C_{\text{end}}$ denote the counts at the beginning and end of the window, respectively.
 
 - **Temporal Pattern:**\
    Categorical assignment based on time series characteristics:
