@@ -138,7 +138,7 @@ Multiple color layers are passed as a dictionary to DMP to visualize different d
 - **Embedding Generation:**\
    Textual data (e.g., skill names, job titles) are converted into high-dimensional vectors using transformer models (e.g., `SentenceTransformer` with the *all-mpnet-base-v2* model). These embeddings capture semantic nuances of the text.
 
-- **UMAP *(GPU-accelerated)*:**\
+- **UMAP _(GPU-accelerated)_:**\
    The Uniform Manifold Approximation and Projection (UMAP) algorithm reduces the high-dimensional embeddings to two dimensions. Key parameters include:
 
    - **`n_neighbors`:** Typically 40, balancing local and global structure.
@@ -149,7 +149,7 @@ Multiple color layers are passed as a dictionary to DMP to visualize different d
 
 ### 5\.2. Clustering Algorithms
 
-- **HDBSCAN *(GPU-accelerated)*:**\
+- **HDBSCAN _(GPU-accelerated)_:**\
    A density-based clustering algorithm that does not require a pre-specified number of clusters. Parameters such as `min_cluster_size` (e.g., 100) and `min_samples` (e.g., 20) are tuned to filter noise.
 
 ### 5\.3. Salary Analysis
