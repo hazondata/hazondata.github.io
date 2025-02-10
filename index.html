@@ -280,11 +280,27 @@
       }
     }
 
-    /* Add styles for Markdown content */
+    /* Update Markdown content container width */
     .markdown-content {
         background: var(--sidebar-bg);
         color: #f8fafc;
         line-height: 1.6;
+        max-width: 66.666%; /* 2/3 of the container width */
+        margin: 0 auto; /* Center the container */
+        height: 100%;
+        padding: 2rem;
+        border-radius: 15px;
+    }
+
+    /* Add a container with background for better visual hierarchy */
+    .markdown-container {
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
     }
 
     .markdown-content h1,
@@ -399,11 +415,12 @@
         const isMarkdown = viz.file.endsWith('.md');
 
         if (isMarkdown) {
-            // For Markdown files, create a div to hold the content
             tabPane.innerHTML = `
-                <div class="iframe-container markdown-content" style="padding: 2rem; overflow-y: auto;">
-                    <div class="loading-spinner spinner-border text-primary"></div>
-                    <div class="markdown-body"></div>
+                <div class="markdown-container">
+                    <div class="markdown-content">
+                        <div class="loading-spinner spinner-border text-primary"></div>
+                        <div class="markdown-body"></div>
+                    </div>
                 </div>
             `;
         } else {
