@@ -286,10 +286,11 @@
         color: #f8fafc;
         line-height: 1.6;
         max-width: 66.666%; /* 2/3 of the container width */
-        margin: 0 auto; /* Center the container */
+        margin: 0; /* Remove auto margin to align left */
         height: 100%;
         padding: 2rem;
         border-radius: 15px;
+        overflow-y: auto; /* Enable vertical scrolling */
     }
 
     /* Add a container with background for better visual hierarchy */
@@ -298,9 +299,10 @@
         width: 100%;
         padding: 2rem;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start; /* Change from center to flex-start for left alignment */
         background: rgba(0, 0, 0, 0.1);
         border-radius: 15px;
+        overflow: hidden; /* Ensure container doesn't scroll */
     }
 
     .markdown-content h1,
